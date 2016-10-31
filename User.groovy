@@ -21,12 +21,11 @@ class User{
     this.username = username;
       friends = new ArrayList<User>();
   }
-  public User(int id, String username, String password, String email, int status, Profile profile){
+  public User(int id, String username, String password, String email, Profile profile){
       this.id = id;
       this.username = username;
       this.password = password;
       this.email = email;
-      this.status = status;
       this.profile = new Profile();
       friends = [];
   }
@@ -36,7 +35,6 @@ class User{
     this.username = user.getUsername();
     this.password = user.getPassword();
     this.email = user.getEmail();
-    this.status = user.getStatus();
     this.profile = new Profile(user.getProfile());
     for(int i=0; i<user.getFriendSize(); i++){
       this.friends << user.getFriend(i);
