@@ -12,7 +12,7 @@ class User{
   def block;
   // def posts;
 
-  public User(){ 
+  public User(){
     friends = new ArrayList<User>();
   }
   public User(Integer id, String username){
@@ -25,7 +25,6 @@ class User{
       this.username = username;
       this.password = password;
       this.email = email;
-      this.status = status;
       this.profile = new Profile();
       friends = [];
   }

@@ -14,5 +14,9 @@ class Main{
       user1.removeFriend(user2);
 
       println(user1.getFriendSize());
+
+      def sn = new SocialNetwork();
+      sn.register("try", "try", "try@try.com", "try");
+      println sn.login("try", "try");
   }
 }
