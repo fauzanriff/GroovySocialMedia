@@ -1,13 +1,16 @@
 package socialnetwork
 
 class Controller {
+    def sn = new SocialNetwork();
+    def currentUser;
+    
     def register(name){
 	
 		[username: {username ->
 			[email: {email ->
 				[password: {password ->
-                                        def user = new User(1, username);
-					println("You've registered!");
+                                        sn.register(name, username, email, password);
+                                        println ("Welcome, $name!");
                                         
 				}]
 			}]
@@ -15,32 +18,31 @@ class Controller {
 			
     }
 
-    def login(){
-	[username: {username ->
+    def login(username){
+	
 		[password: {password ->
-			//panggil fungsi
-			
+			println sn.login(username, password);
+			println ("Hello, $username");
 		
 		}]
-	}]		
+			
     }
 
     def addfriend(username){
-	
+	//currentUser.addFriend("username");
+        
     }
 
-    def post(){
-	[status: {status ->
-                
-        }]
+    def post(status){
+	//
     }
     
-    def comment(){
-        [post: {postid ->
+    def comment(postid){
+        
                 [content: {content ->
                         
                 }]
-        }]
+        
     }
   
      
