@@ -7,6 +7,7 @@ class Post{
   def updateTime;
   def postedBy;
   def privacy;
+  def comments = []
 
   public Post(){ }
 
@@ -70,6 +71,11 @@ class Post{
 
   public def setPrivacy(String privacy){
     this.privacy = privacy;
+  }
+
+  public def addComment(int id, User user, String content) {
+    def comment = new Comment(id, user, content)
+    comments << comment
   }
 }
 
