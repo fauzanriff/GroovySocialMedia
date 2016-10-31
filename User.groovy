@@ -6,14 +6,13 @@ class User{
   def username;
   def password;
   def email;
-  def status;
   def profile;
   def friends;
   def following;
   def block;
   // def posts;
 
-  public User(){ 
+  public User(){
     friends = new ArrayList<User>();
   }
   public User(Integer id, String username){
@@ -77,14 +76,6 @@ class User{
 
   public def setEmail(String email){
     this.email = email;
-  }
-
-  public def getStatus(){
-    return status;
-  }
-
-  public def setStatus(int status){
-    this.status = status;
   }
 
   public Profile getProfile(){
