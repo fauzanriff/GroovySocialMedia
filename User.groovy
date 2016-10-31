@@ -1,3 +1,5 @@
+import Profile;
+
 class User{
 
   def id;
@@ -5,7 +7,7 @@ class User{
   def password;
   def email;
   def status;
-  // def profile;
+  def profile;
   def friends;
   def following;
   def block;
@@ -19,71 +21,63 @@ class User{
     this.username = username;
       friends = new ArrayList<User>();
   }
-  public User(int id, String username, String password, String email, int status){
+  public User(int id, String username, String password, String email, int status, Profile profile){
       this.id = id;
       this.username = username;
       this.password = password;
       this.email = email;
       this.status = status;
-      // this.profile = profile
+      this.profile = new Profile();
       friends = [];
   }
 
-  public getId(){
+  public def getId(){
     return id;
   }
 
-  public setId(int id){
+  public def setId(int id){
     this.id = id;
   }
 
-  public int getUsername(){
+  public def getUsername(){
     return username;
   }
 
-  public setUsername(String username){
+  public def setUsername(String username){
     this.username = username;
   }
 
-  public String getPassword(){
+  public def getPassword(){
     return password;
   }
 
-  public setPassword(String password){
+  public def setPassword(String password){
     this.password = password;
   }
 
-  public String getEmail(){
+  public def getEmail(){
     return email;
   }
 
-  public setEmail(String email){
+  public def setEmail(String email){
     this.email = email;
   }
 
-  public int getStatus(){
+  public def getStatus(){
     return status;
   }
 
-  public setStatus(int status){
+  public def setStatus(int status){
     this.status = status;
   }
 
-  // public Profile getProfile(){
-  //   return profile;
-  // }
+  public Profile getProfile(){
+    return profile;
+  }
 
-  // public setProfile(Profile profile){
-  //   this.profile = profile;
-  // }
-
-  // public Profile getProfile(){
-  //   return profile;
-  // }
-
-  // public setProfile(Profile profile){
-  //   this.profile = profile;
-  // }
+  public setProfile(Profile profile){
+    this.profile = profile;
+  }
 
   public def addFriend(User friend){
     if(!friends.contains(friend))
