@@ -31,6 +31,24 @@ class User{
       friends = [];
   }
 
+  public User(User user){
+    this.id = user.getId();
+    this.username = user.getUsername();
+    this.password = user.getPassword();
+    this.email = user.getEmail();
+    this.status = user.getStatus();
+    this.profile = new Profile(user.getProfile());
+    for(int i=0; i<user.getFriendSize(); i++){
+      this.friends << user.getFriend(i);
+    }
+    for(int i=0; i<user.getFollowedSize(); i++){
+      this.following << user.getFollowedUser(i);
+    }
+    for(int i=0; i<user.getBlockedSize(); i++){
+      this.block << user.getBlockedUser(i);
+    }
+  }
+
   public def getId(){
     return id;
   }

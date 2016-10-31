@@ -5,7 +5,6 @@ class Profile{
   def dateOfBirth;
   def sex;
   def location;
-  // def avatar;
 
   public Profile(){ }
   public Profile(String name){
@@ -17,6 +16,14 @@ class Profile{
     this.dateOfBirth = dateOfBirth;
     this.sex = sex;
     this.location = location;
+  }
+
+  public Profile(Profile profile){
+    this.name = profile.getName();
+    this.description = profile.getDescription();
+    this.dateOfBirth = profile.getDateOfBirth();
+    this.sex = profile.getSex();
+    this.location = profile.getLocation();
   }
 
   public def getName(){
