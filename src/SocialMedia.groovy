@@ -1,13 +1,10 @@
-import User;
-import Profile;
+class SocialMedia {
 
-class SocialNetwork {
+    HashMap<String, User> users;
+    Integer lastId;
 
-    def users;
-    def lastId;
-
-    SocialNetwork() {
-        this.users = new HashMap();
+    SocialMedia() {
+        this.users = new HashMap<String, User>();
         this.lastId = 0;
     }
 
@@ -20,7 +17,7 @@ class SocialNetwork {
             return false;
         }
         def profile = new Profile(name);
-        def user = new User(this.lastId++, username, password, email, profile);
+        def user = new User(username, password, email, profile);
         this.users[username] = user;
         return true;
     }
