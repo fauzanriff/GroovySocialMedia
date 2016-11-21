@@ -1,6 +1,6 @@
 class Controller {
 
-    def dbConnector
+    def dbConnector = new DBConnector()
 
     def comment(post) {
         [from: { who ->
@@ -15,12 +15,12 @@ class Controller {
         [password: { password ->
             [email: { email ->
                 [name: { name ->
-                    [biodata: { my_biodata ->
+                    [description: { description ->
                         [sex: { sex ->
                             [location: { location ->
                                 [dateofbirth: { dateofbirth ->
                                     def date = Date.parse('dd-M-yyyy', dateofbirth)
-                                    def profile = new Profile(name, my_biodata, date, sex, location)
+                                    def profile = new Profile(name, description, date, sex, location)
                                     def user = new User(username, password, email, profile)
 
                                     dbConnector.addUser(user)
