@@ -10,7 +10,9 @@ class Main {
 
         def dbCon = new DBConnector()
         dbCon.createUserTable()
-        dbCon.addUser(user1)
+        dbCon.createCommentTable()
+        dbCon.createPostTable()
+        dbCon.createProfileTable()
     }
 
 }
